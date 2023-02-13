@@ -40,7 +40,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
         if self.rect.left < 0:
-            self.rect.left = 0
+            self.rect.left = 0 #
 
     def shoot(self, all_sprites, bullets):
         bullet = Bullet(self.rect.centerx, self.rect.top)

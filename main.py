@@ -50,7 +50,7 @@ while running:
 
     # Обновление
     all_sprites.update()  #
-    mobs.update()
+    mobs.update() #
 
     # Рендеринг
     screen.fill(BLACK)
