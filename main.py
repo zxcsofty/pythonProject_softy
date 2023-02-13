@@ -31,7 +31,7 @@ all_sprites.add(player)
 for i in range(8):
     m = Mob()
     all_sprites.add(m)
-
+#
 # Цикл игры
 running = True
 while running:
