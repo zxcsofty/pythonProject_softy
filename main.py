@@ -1,7 +1,7 @@
 import pygame
 import random
 from parametrs import *
-from sprites import Mob, Player
+from sprites import Mob, Player, Bullet
 
 WIDTH = 480
 HEIGHT = 600
@@ -25,13 +25,15 @@ clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
 player = Player()
 all_sprites.add(player)
+bullets = pygame.sprite.Group()
 
 player = Player()
 all_sprites.add(player)
+mobs = pygame.sprite.Group()
 for i in range(8):
     m = Mob()
-    all_sprites.add(m)
-#
+    mobs.add(m)
+
 # Цикл игры
 running = True
 while running:
@@ -42,14 +44,23 @@ while running:
         # проверка для закрытия окна
         if event.type == pygame.QUIT:
             running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                player.shoot(all_sprites, bullets)
 
     # Обновление
     all_sprites.update()
+    mobs.update()
 
     # Рендеринг
     screen.fill(BLACK)
     all_sprites.draw(screen)
+    mobs.draw(screen)
     # После отрисовки всего, переворачиваем экран
     pygame.display.flip()
+    # Проверка, не ударил ли моб игрока
+    hits = pygame.sprite.spritecollide(player, mobs, False)
+    if hits:
+        running = False
 
 pygame.quit()
