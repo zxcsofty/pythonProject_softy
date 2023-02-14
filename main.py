@@ -63,4 +63,10 @@ while running:
     if hits:
         running = False
 
+    hits = pygame.sprite.groupcollide(mobs, bullets, True, True)
+    for hit in hits:
+        m = Mob()
+        all_sprites.add(m)
+        mobs.add(m)
+
 pygame.quit()
