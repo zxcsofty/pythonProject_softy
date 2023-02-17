@@ -1,6 +1,6 @@
 import pygame
 import random
-from parametrs import *#
+from parametrs import *
 class Mob(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)

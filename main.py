@@ -50,7 +50,7 @@ while running:
     # Проверка, не ударил ли моб игрока
     hits = pygame.sprite.spritecollide(player, mobs, False, pygame.sprite.collide_circle)
     if hits:
-        running = False#
+        running = False
 
     hits = pygame.sprite.groupcollide(mobs, bullets, True, True)
     for hit in hits:
