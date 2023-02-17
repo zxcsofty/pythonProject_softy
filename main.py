@@ -3,18 +3,6 @@ import random
 from parametrs import *
 from sprites import Mob, Player, Bullet
 
-WIDTH = 480
-HEIGHT = 600
-FPS = 60
-
-# Задаем цвета
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-YELLOW = (255, 255, 0)
-
 # Создаем игру и окно
 pygame.init()
 pygame.mixer.init()
@@ -53,13 +41,14 @@ while running:
     mobs.update() #
 
     # Рендеринг
-    screen.fill(BLACK)
-    all_sprites.draw(screen)
     mobs.draw(screen)
+    screen.fill(BLACK)
+    screen.blit(background, background_rect)
+    all_sprites.draw(screen)
     # После отрисовки всего, переворачиваем экран
     pygame.display.flip()
     # Проверка, не ударил ли моб игрока
-    hits = pygame.sprite.spritecollide(player, mobs, False)
+    hits = pygame.sprite.spritecollide(player, mobs, False, pygame.sprite.collide_circle)
     if hits:
         running = False
 
