@@ -37,8 +37,8 @@ while running:
                 player.shoot(all_sprites, bullets)
 
     # Обновление
-    all_sprites.update()  #
-    mobs.update() #
+    all_sprites.update()
+    mobs.update()
 
     # Рендеринг
     mobs.draw(screen)

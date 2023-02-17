@@ -17,11 +17,12 @@ player_img = pygame.image.load('sources/player.png')
 meteor_img = pygame.image.load('sources/mob.png')
 bullet_img = pygame.image.load('sources/bullet.png')
 
-
 meteor_images = []
-meteor_list =['meteorBrown_big1.png','meteorBrown_med1.png',
-              'meteorBrown_med1.png','meteorBrown_med3.png',
-              'meteorBrown_small1.png','meteorBrown_small2.png',
-              'meteorBrown_tiny1.png']
+meteor_list =['sources/meteorBrown_big1.png','sources/mob.png',
+              'sources/meteorBrown_med1.png',
+              'sources/meteorBrown_small1.png',
+              'sources/meteorBrown_tiny1.png', 'sources/mob.png',
+              'sources/meteorBrown_small2.png',
+              'sources/meteorBrown_med3.png']
 for img in meteor_list:
-    meteor_images.append(pygame.image.load('sources/mob.png'))
+    meteor_images.append(pygame.image.load(img))
