@@ -25,4 +25,4 @@ meteor_list =['sources/meteorBrown_big1.png','sources/mob.png',
               'sources/meteorBrown_small2.png',
               'sources/meteorBrown_med3.png']
 for img in meteor_list:
-    meteor_images.append(pygame.image.load(img))
+    meteor_images.append(pygame.image.load(img))#
