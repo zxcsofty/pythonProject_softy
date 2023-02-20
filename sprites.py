@@ -8,7 +8,7 @@ class Mob(pygame.sprite.Sprite):
         self.image = self.image_orig.copy()
         self.rect = self.image.get_rect()
         self.radius = int(self.rect.width * .85 / 2)
-        # pygame.draw.circle(self.image, RED, self.rect.center, self.radius)
+        #pygame.draw.circle(self.image, RED, self.rect.center, self.radius)
         self.rect.x = random.randrange(WIDTH - self.rect.width)
         self.rect.y = random.randrange(-150, -100)
         self.speedy = random.randrange(1, 8)
@@ -64,7 +64,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.left < 0:
             self.rect.left = 0 #
 
-    def shoot(self, all_sprites, bullets):
+    def shoot(self):
         bullet = Bullet(self.rect.centerx, self.rect.top)
         all_sprites.add(bullet)
         bullets.add(bullet)
